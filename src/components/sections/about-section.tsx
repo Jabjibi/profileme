@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { skills } from "@/data/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { WobbleCard } from "../ui/wobble-card";
@@ -10,14 +12,11 @@ const codingPhoto =
 
 export function AboutSection() {
   return (
-    <section
-      id="about"
-      className="section-reveal section-reveal-delay-1 mt-20 scroll-mt-20"
-    >
+    <section id="about" className="section-reveal section-reveal-delay-1 scroll-mt-20">
       <div className="mx-auto w-full max-w-5xl px-1 sm:px-0">
         <div className="grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-3">
           <WobbleCard
-            containerClassName="col-span-1 min-h-[240px] bg-gradient-to-br from-fuchsia-700 to-pink-900 lg:col-span-2 lg:min-h-[280px]"
+            containerClassName="col-span-1 min-h-[240px] bg-gradient-to-br from-sky-700 via-cyan-700 to-teal-900 lg:col-span-2 lg:min-h-[280px]"
             className="px-5 py-7 sm:px-7 sm:py-9 lg:pr-52"
           >
             <div className="max-w-xs">
@@ -28,15 +27,17 @@ export function AboutSection() {
                 Experience at BANGKOK MSP CO., LTD. developing automation platforms and security monitoring tools for the SOC team to improve operational efficiency.
               </p>
             </div>
-            <img
+            <Image
               src={workspacePhoto}
               alt="Workspace setup"
+              width={250}
+              height={220}
               className="pointer-events-none absolute -bottom-4 -right-4 hidden h-[165px] w-[180px] rounded-xl object-cover shadow-2xl sm:h-[190px] sm:w-[210px] md:block lg:-right-10 lg:h-[220px] lg:w-[250px]"
               loading="lazy"
             />
           </WobbleCard>
           <WobbleCard
-            containerClassName="col-span-1 min-h-[240px] bg-gradient-to-br from-indigo-500 to-indigo-800 lg:min-h-[280px]"
+            containerClassName="col-span-1 min-h-[240px] bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-900 lg:min-h-[280px]"
             className="px-5 py-7 sm:px-7 sm:py-9"
           >
             <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
@@ -47,7 +48,7 @@ export function AboutSection() {
             </p>
           </WobbleCard>
           <WobbleCard
-            containerClassName="col-span-1 min-h-[260px] bg-gradient-to-br from-blue-700 to-indigo-900 lg:col-span-3 lg:min-h-[320px]"
+            containerClassName="col-span-1 min-h-[260px] bg-gradient-to-br from-slate-800 via-blue-900 to-cyan-950 lg:col-span-3 lg:min-h-[320px]"
             className="px-5 py-7 sm:px-7 sm:py-9 lg:pr-64"
           >
             <div className="max-w-sm">
@@ -58,9 +59,11 @@ export function AboutSection() {
                 Highly skilled in utilizing Frontend, Backend, Infrastructure, and Security tools to build efficient and secure systems.
               </p>
             </div>
-            <img
+            <Image
               src={codingPhoto}
               alt="Coding on screen"
+              width={320}
+              height={240}
               className="pointer-events-none absolute -bottom-6 -right-6 hidden h-[180px] w-[250px] rounded-xl object-cover shadow-2xl md:block lg:-right-12 lg:h-[240px] lg:w-[320px]"
               loading="lazy"
             />
@@ -69,7 +72,7 @@ export function AboutSection() {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="rounded-full border-slate-100/35 bg-slate-100/10 px-3 py-1 text-slate-50"
+                  className="rounded-full border-slate-100/35 bg-slate-100/10 px-3 py-1 text-slate-100"
                 >
                   {skill}
                 </Badge>

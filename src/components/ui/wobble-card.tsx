@@ -23,7 +23,7 @@ export const WobbleCard = ({
   containerClassName,
   className,
 }: WobbleCardProps) => {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [canAnimate, setCanAnimate] = useState(false);
 
@@ -46,17 +46,20 @@ export const WobbleCard = ({
   }, []);
 
   useEffect(() => {
+    const containerElement = containerRef.current;
+    const contentElement = contentRef.current;
+
     return () => {
-      if (containerRef.current) {
-        gsap.killTweensOf(containerRef.current);
+      if (containerElement) {
+        gsap.killTweensOf(containerElement);
       }
-      if (contentRef.current) {
-        gsap.killTweensOf(contentRef.current);
+      if (contentElement) {
+        gsap.killTweensOf(contentElement);
       }
     };
   }, []);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!canAnimate || !containerRef.current || !contentRef.current) {
       return;
     }
@@ -121,7 +124,7 @@ export const WobbleCard = ({
   };
 
   return (
-    <section
+    <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
@@ -149,7 +152,7 @@ export const WobbleCard = ({
           {children}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

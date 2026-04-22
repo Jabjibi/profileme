@@ -36,7 +36,7 @@ export const projects: ProjectItem[] = [
       "A scalable online examination platform to modernize coding assessments with automated, real-time evaluation.",
     stack: ["Next.js", "TypeScript", "Judge0 API", "Docker", "PostgreSQL"],
     category: "fullstack",
-    link: "#",
+    link: "",
   },
   {
     title: "Credential Deduplication Automation",
@@ -44,7 +44,7 @@ export const projects: ProjectItem[] = [
       "Full-stack automation platform to process and deduplicate CloudSEK credential reports, eliminating redundant tasks.",
     stack: ["Next.js", "n8n", "PostgreSQL"],
     category: "automation",
-    link: "#",
+    link: "",
   },
   {
     title: "SOC Alert Monitoring Dashboard",
@@ -52,7 +52,7 @@ export const projects: ProjectItem[] = [
       "Centralized monitoring dashboard integrating CrowdStrike API to aggregate, filter, and enrich incident metadata.",
     stack: ["n8n", "Node.js", "CrowdStrike API"],
     category: "security",
-    link: "#",
+    link: "",
   },
   {
     title: "Automated Task Notification System",
@@ -60,7 +60,7 @@ export const projects: ProjectItem[] = [
       "Automated tracking system fetching pending tasks via REST API and dynamic Slack notifications to prevent missed deadlines.",
     stack: ["n8n", "REST API", "Slack API"],
     category: "automation",
-    link: "#",
+    link: "",
   },
   {
     title: "Web Vulnerability Pentesting",
@@ -68,6 +68,6 @@ export const projects: ProjectItem[] = [
       "Conducted grey-box penetration testing to identify vulnerabilities based on OWASP Top 10.",
     stack: ["Burp Suite", "OWASP Top 10"],
     category: "security",
-    link: "#",
+    link: "",
   },
 ];
