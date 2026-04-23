@@ -11,6 +11,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+const RESUME_FILE_PATH = "/Tanapon-Resume-SoftwareDev.pdf";
+
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [startSnapshotCounters, setStartSnapshotCounters] = useState(false);
@@ -24,7 +26,7 @@ export function HeroSection() {
     setIsResumeOpen(true);
 
     try {
-      const response = await fetch("/resume.pdf", { method: "HEAD", cache: "no-store" });
+      const response = await fetch(RESUME_FILE_PATH, { method: "HEAD", cache: "no-store" });
       setHasResumeFile(response.ok);
     } catch {
       setHasResumeFile(false);
@@ -286,7 +288,7 @@ export function HeroSection() {
               <div className="flex items-center gap-2">
                 {hasResumeFile ? (
                   <a
-                    href="/resume.pdf"
+                    href={RESUME_FILE_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-full border border-slate-600 px-3 py-1 text-xs font-medium text-slate-200 transition-colors hover:border-slate-400 hover:text-white"
@@ -312,7 +314,7 @@ export function HeroSection() {
               </div>
             ) : hasResumeFile ? (
               <iframe
-                src="/resume.pdf#view=FitH"
+                src={`${RESUME_FILE_PATH}#view=FitH`}
                 title="Resume PDF"
                 className="h-[75vh] w-full bg-slate-900"
               />
@@ -321,7 +323,7 @@ export function HeroSection() {
                 <div className="space-y-3 text-center">
                   <p className="text-lg font-semibold text-slate-100">Resume file not found</p>
                   <p className="text-sm text-slate-400">
-                    Please add your PDF file at <span className="font-medium text-slate-200">public/resume.pdf</span>.
+                    Please add your PDF file at <span className="font-medium text-slate-200">public/Tanapon-Resume-SoftwareDev.pdf</span>.
                   </p>
                 </div>
               </div>

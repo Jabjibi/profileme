@@ -21,9 +21,9 @@ const channels = [
   {
     icon: GitBranch,
     label: "GitHub",
-    value: "github.com/tanap",
+    value: "github.com/Jabjibi",
     detail: "Explore live repositories and experiments",
-    href: "https://github.com/tanap",
+    href: "https://github.com/Jabjibi",
     external: true,
   },
 ];

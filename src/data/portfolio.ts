@@ -42,7 +42,7 @@ export const projects: ProjectItem[] = [
     title: "Credential Deduplication Automation",
     description:
       "Full-stack automation platform to process and deduplicate CloudSEK credential reports, eliminating redundant tasks.",
-    stack: ["Next.js", "n8n", "PostgreSQL"],
+    stack: ["Next.js", "JavaScript", "n8n", "PostgreSQL"],
     category: "automation",
     link: "",
   },
@@ -50,7 +50,7 @@ export const projects: ProjectItem[] = [
     title: "SOC Alert Monitoring Dashboard",
     description:
       "Centralized monitoring dashboard integrating CrowdStrike API to aggregate, filter, and enrich incident metadata.",
-    stack: ["n8n", "Node.js", "CrowdStrike API"],
+    stack: ["Next.js", "JavaScript", "n8n", "CrowdStrike API"],
     category: "security",
     link: "",
   },
@@ -58,7 +58,7 @@ export const projects: ProjectItem[] = [
     title: "Automated Task Notification System",
     description:
       "Automated tracking system fetching pending tasks via REST API and dynamic Slack notifications to prevent missed deadlines.",
-    stack: ["n8n", "REST API", "Slack API"],
+    stack: ["n8n", "JavaScript", "Excel Sheets API", "Slack API"],
     category: "automation",
     link: "",
   },
