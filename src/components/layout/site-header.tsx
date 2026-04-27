@@ -36,15 +36,15 @@ export function SiteHeader() {
         isScrolled ? "bg-slate-950/85 border-slate-800/70" : "bg-slate-950/0 border-slate-800/0"
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link href="#home" className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-100">
+      <div className="mx-auto grid h-16 w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
+        <Link href="#home" className="justify-self-start inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-100">
           <span className="rounded-lg bg-primary/15 p-1.5 text-primary">
             <Code2 className="size-4" />
           </span>
           Tan Portfolio
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+        <nav className="hidden justify-self-center items-center gap-6 text-sm text-muted-foreground md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -56,7 +56,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div>
+        <div className="justify-self-end">
           <Button asChild size="sm" className="gap-2 rounded-full transition-transform hover:scale-105">
             <Link href="#contact">
               <Sparkles className="size-4 animate-pulse" />

@@ -1,13 +1,14 @@
 "use client";
 
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { gsap } from "gsap";
 
 import { projects, type ProjectCategory, type ProjectItem } from "@/data/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import FadeContent from "@/components/ui/fade-content";
+import BlurText from "@/components/ui/blur-text";
 
 const categories = [
   { label: "All", value: "all" },
@@ -42,8 +43,6 @@ function isLiveProject(project: ProjectItem) {
 
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
 
   const filteredProjects = useMemo(() => {
     if (activeCategory === "all") {
@@ -52,97 +51,56 @@ export function ProjectsSection() {
     return projects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
 
-  useLayoutEffect(() => {
-    if (typeof window === "undefined" || !sectionRef.current) {
-      return;
-    }
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      return;
-    }
-
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        "[data-project-intro]",
-        { autoAlpha: 0, y: 26 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.78,
-          stagger: 0.09,
-          ease: "power2.out",
-        },
-      );
-    }, sectionRef);
-
-    return () => {
-      context.revert();
-    };
-  }, []);
-
-  useLayoutEffect(() => {
-    const cards = cardsRef.current.filter((card): card is HTMLDivElement => Boolean(card));
-    if (!cards.length || typeof window === "undefined") {
-      return;
-    }
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      return;
-    }
-
-    gsap.set(cards, { autoAlpha: 0, y: 24, scale: 0.98 });
-    const tween = gsap.to(cards, {
-      autoAlpha: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.62,
-      stagger: 0.1,
-      ease: "power2.out",
-    });
-
-    return () => {
-      tween.kill();
-      gsap.set(cards, { clearProps: "opacity,visibility,transform" });
-    };
-  }, [activeCategory, filteredProjects.length]);
-
   return (
     <section
-      ref={sectionRef}
       id="projects"
       className="section-reveal mx-auto w-full max-w-6xl scroll-mt-24 px-6 md:px-8"
     >
       <div className="space-y-10">
+        {/* Section header */}
         <div className="space-y-4">
-          <div className="flex items-center space-x-3" data-project-intro>
-            <span className="block h-px w-10 bg-gradient-to-r from-cyan-300 to-emerald-300" />
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-200">Selected Works</p>
-          </div>
-          <h2 className="text-balance text-4xl font-bold tracking-tight text-white md:text-5xl" data-project-intro>
-            Impact-Driven Projects
-          </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg" data-project-intro>
-            Real projects in full-stack engineering, automation pipelines, and security operations.
-          </p>
+          <FadeContent duration={600} delay={0} translateY={20}>
+            <div className="flex items-center space-x-3">
+              <span className="block h-px w-10 bg-gradient-to-r from-cyan-300 to-emerald-300" />
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-200">Selected Works</p>
+            </div>
+          </FadeContent>
+
+          <FadeContent duration={650} delay={80} translateY={22}>
+            <BlurText
+              text="Impact-Driven Projects"
+              delay={55}
+              animateBy="words"
+              direction="bottom"
+              threshold={0.1}
+              stepDuration={0.36}
+              className="text-4xl font-bold tracking-tight text-white md:text-5xl"
+            />
+          </FadeContent>
+
+          <FadeContent duration={650} delay={160} translateY={20}>
+            <p className="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+              Real projects in full-stack engineering, automation pipelines, and security operations.
+            </p>
+          </FadeContent>
         </div>
 
         <Tabs value={activeCategory} onValueChange={(value) => setActiveCategory(value as CategoryFilter)} className="flex flex-col gap-8">
-          <TabsList
-            className="inline-flex h-auto max-w-fit self-start justify-start overflow-x-auto rounded-full border border-slate-700/70 bg-slate-900/45 p-1"
-            data-project-intro
-          >
-            {categories.map((category) => (
-              <TabsTrigger
-                key={category.value}
-                value={category.value}
-                className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-400 transition-all hover:text-white data-[state=active]:bg-slate-800 data-[state=active]:text-white data-[state=active]:shadow-lg"
-              >
-                {category.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <FadeContent duration={600} delay={220} translateY={16}>
+            <TabsList
+              className="inline-flex h-auto max-w-fit self-start justify-start overflow-x-auto rounded-full border border-slate-700/70 bg-slate-900/45 p-1"
+            >
+              {categories.map((category) => (
+                <TabsTrigger
+                  key={category.value}
+                  value={category.value}
+                  className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-400 transition-all hover:text-white data-[state=active]:bg-slate-800 data-[state=active]:text-white data-[state=active]:shadow-lg"
+                >
+                  {category.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </FadeContent>
 
           <div className="grid gap-6 pt-2 sm:grid-cols-2">
             {filteredProjects.map((project, index) => {
@@ -150,9 +108,13 @@ export function ProjectsSection() {
               const liveProject = isLiveProject(project);
 
               return (
-                <div key={`${activeCategory}-${project.title}`} ref={(element) => {
-                  cardsRef.current[index] = element;
-                }}>
+                <FadeContent
+                  key={`${activeCategory}-${project.title}`}
+                  duration={600}
+                  delay={index * 90}
+                  translateY={24}
+                  scale={0.97}
+                >
                   <Card
                     className={`group relative flex h-full flex-col overflow-hidden border-slate-700/80 bg-slate-950/55 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-500/75 hover:bg-slate-900/70 ${style.glow}`}
                   >
@@ -204,7 +166,7 @@ export function ProjectsSection() {
                       )}
                     </CardContent>
                   </Card>
-                </div>
+                </FadeContent>
               );
             })}
           </div>
