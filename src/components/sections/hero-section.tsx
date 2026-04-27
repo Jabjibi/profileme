@@ -4,7 +4,6 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ArrowRight, Download, MapPin, Code2, Sparkles } from "lucide-react";
 
-import { Boxes } from "@/components/ui/background-boxes";
 import { CountUpNumber } from "@/components/ui/count-up-number";
 import { profile } from "@/data/portfolio";
 import { Badge } from "@/components/ui/badge";
@@ -164,10 +163,9 @@ export function HeroSection() {
 
   return (
     <section ref={sectionRef} id="home" className="relative w-full pt-16">
-      <div className="relative flex min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-start overflow-hidden bg-slate-950 py-10 lg:justify-center lg:py-12">
-        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_18%_20%,rgba(6,182,212,0.22),transparent_46%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.16),transparent_42%),radial-gradient(circle_at_50%_100%,rgba(59,130,246,0.18),transparent_46%)]" />
-        <div className="pointer-events-none absolute inset-0 z-0 bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_12%,black)]" />
-        <Boxes className="absolute inset-0 z-0 h-full w-full opacity-70" />
+      <div className="relative flex min-h-[calc(100vh-4rem)] w-full flex-col items-center justify-start overflow-hidden py-10 lg:justify-center lg:py-12">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_18%_20%,rgba(6,182,212,0.08),transparent_46%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.06),transparent_42%)]" />
+
         <div className="relative z-10 w-full max-w-7xl mx-auto grid gap-12 p-6 pointer-events-none sm:p-8 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-16 lg:p-12">
           <div className="space-y-8">
             <div className="intro-text">
