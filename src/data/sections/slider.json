@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Highlight Slider",
+  "heading": "Featured Projects",
+  "slides": [
+    {
+      "title": "Credential Deduplication System",
+      "summary": "Developed Full-stack Automation system using PostgreSQL upsert mechanism, reducing redundant record creation.",
+      "metric": "Increased data management efficiency"
+    },
+    {
+      "title": "SOC Alert Monitoring Dashboard",
+      "summary": "Aggregated security alerts from CrowdStrike API to a central dashboard with custom Node.js logic.",
+      "metric": "Improved operational visibility"
+    },
+    {
+      "title": "Automated Task Notification System",
+      "summary": "Built an automated daily task tracking system to fetch pending tasks via REST API and send Slack alerts.",
+      "metric": "Achieved zero missed deadlines"
+    }
+  ]
+}

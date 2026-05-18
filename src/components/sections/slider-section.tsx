@@ -1,28 +1,11 @@
 "use client";
 
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import FadeContent from "@/components/ui/fade-content";
-
-const slides = [
-  {
-    title: "Credential Deduplication System",
-    summary: "Developed Full-stack Automation system using PostgreSQL upsert mechanism, reducing redundant record creation.",
-    metric: "Increased data management efficiency",
-  },
-  {
-    title: "SOC Alert Monitoring Dashboard",
-    summary: "Aggregated security alerts from CrowdStrike API to a central dashboard with custom Node.js logic.",
-    metric: "Improved operational visibility",
-  },
-  {
-    title: "Automated Task Notification System",
-    summary: "Built an automated daily task tracking system to fetch pending tasks via REST API and send Slack alerts.",
-    metric: "Achieved zero missed deadlines",
-  },
-];
+import { InfiniteMovingCards } from "@/components/animations/infinite-moving-cards";
+import FadeContent from "@/components/animations/fade-content";
+import content from "@/data/sections/slider.json";
 
 export function SliderSection() {
-  const sliderItems = slides.map((slide) => ({
+  const sliderItems = content.slides.map((slide) => ({
     quote: slide.summary,
     name: slide.title,
     title: slide.metric,
@@ -30,15 +13,15 @@ export function SliderSection() {
 
   return (
     <section id="slider" className="section-reveal section-reveal-delay-1 scroll-mt-20">
-      <div className="relative overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-950/50 shadow-[0_20px_60px_rgba(2,6,23,0.55)]">
+      <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-card/50 shadow-[0_4px_16px_rgba(15,23,42,0.06)]">
         <div className="relative z-10 space-y-6 p-6 sm:p-8">
           <FadeContent duration={600} delay={0} translateY={20}>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
-                  Highlight Slider
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">
+                  {content.eyebrow}
                 </p>
-                <h2 className="text-2xl font-semibold text-slate-50 sm:text-3xl">Featured Projects</h2>
+                <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">{content.heading}</h2>
               </div>
             </div>
           </FadeContent>

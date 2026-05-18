@@ -1,0 +1,46 @@
+{
+  "badge": "Available for new projects",
+  "cta": {
+    "primary": "View Work",
+    "resume": "Resume"
+  },
+  "resumePath": "/Tanapon-Resume-SoftwareDev.pdf",
+  "skillCard": {
+    "heading": "Tech Stack",
+    "groups": [
+      {
+        "label": "Frontend",
+        "color": "cyan",
+        "skills": ["TypeScript", "Next.js"]
+      },
+      {
+        "label": "Backend",
+        "color": "emerald",
+        "skills": ["Node.js", "Go", "Python"]
+      },
+      {
+        "label": "Infrastructure",
+        "color": "blue",
+        "skills": ["PostgreSQL", "Docker"]
+      },
+      {
+        "label": "Security & Tools",
+        "color": "rose",
+        "skills": ["n8n", "Burp Suite"]
+      }
+    ]
+  },
+  "modal": {
+    "ariaLabel": "Resume PDF Preview",
+    "title": "Resume Preview",
+    "iframeTitle": "Resume PDF",
+    "openNewTab": "Open New Tab",
+    "close": "Close",
+    "checking": "Checking resume file...",
+    "notFound": {
+      "heading": "Resume file not found",
+      "description": "Please add your PDF file at",
+      "path": "public/Tanapon-Resume-SoftwareDev.pdf"
+    }
+  }
+}

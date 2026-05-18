@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Selected Works",
+  "heading": "Impact-Driven Projects",
+  "description": "Real projects in full-stack engineering, automation pipelines, and security operations.",
+  "caseStudyLink": "View Case Study",
+  "caseStudyUnavailable": "Case study available on request.",
+  "categories": [
+    { "label": "All", "value": "all" },
+    { "label": "Fullstack", "value": "fullstack" },
+    { "label": "Automation", "value": "automation" },
+    { "label": "Security", "value": "security" }
+  ]
+}

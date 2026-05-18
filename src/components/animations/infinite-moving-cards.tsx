@@ -100,15 +100,15 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-slate-200/15 bg-slate-950/60 px-6 py-5 backdrop-blur md:w-[550px]"
+            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-border/40 bg-card/60 px-6 py-5 backdrop-blur md:w-[550px]"
             key={`${item.name}-${idx}`}
           >
             <blockquote>
-              <p className="text-sm font-medium uppercase tracking-[0.12em] text-slate-400">Case Study</p>
-              <span className="relative z-20 mt-2 block text-xl leading-[1.35] font-semibold text-slate-100">
+              <p className="text-sm font-medium uppercase tracking-[0.12em] text-muted-foreground">Case Study</p>
+              <span className="relative z-20 mt-2 block text-xl leading-[1.35] font-semibold text-foreground">
                 {item.name}
               </span>
-              <span className="relative z-20 mt-3 block text-base leading-[1.7] font-normal text-slate-300">
+              <span className="relative z-20 mt-3 block text-base leading-[1.7] font-normal text-muted-foreground">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-5 flex flex-row items-center">

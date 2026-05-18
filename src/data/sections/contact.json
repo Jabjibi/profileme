@@ -1,0 +1,35 @@
+{
+  "badge": "Let's Collaborate",
+  "heading": "Ready for a new project?",
+  "description": "If you need scalable automation systems, full-stack solutions, or cybersecurity consulting, let's shape something meaningful together.",
+  "cta": {
+    "primary": "Send an email",
+    "secondary": "Call now"
+  },
+  "responseTime": "Usually responds within 24 hours.",
+  "channelsLabel": "Direct channels",
+  "channels": [
+    {
+      "iconKey": "mail",
+      "label": "Email",
+      "value": "yurawan.ta@gmail.com",
+      "detail": "Best for project ideas and collaboration",
+      "href": "mailto:yurawan.ta@gmail.com"
+    },
+    {
+      "iconKey": "phone",
+      "label": "Phone",
+      "value": "(+66) 090 - 215 - 9223",
+      "detail": "For quick discussions and urgent requests",
+      "href": "tel:+660902159223"
+    },
+    {
+      "iconKey": "github",
+      "label": "GitHub",
+      "value": "github.com/Jabjibi",
+      "detail": "Explore live repositories and experiments",
+      "href": "https://github.com/Jabjibi",
+      "external": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {
+      "heading": "Internship Development Security",
+      "description": "Experience at BANGKOK MSP CO., LTD. developing automation platforms and security monitoring tools for the SOC team to improve operational efficiency.",
+      "imageAlt": "Workspace setup"
+    },
+    {
+      "heading": "CS-TEH Graduation Project",
+      "description": "Developed a scalable online examination platform to modernize coding assessments for CS students with automated real-time grading."
+    },
+    {
+      "heading": "Technical Mastery in Automation & Security Tools",
+      "description": "Highly skilled in utilizing Frontend, Backend, Infrastructure, and Security tools to build efficient and secure systems.",
+      "imageAlt": "Coding on screen"
+    }
+  ]
+}

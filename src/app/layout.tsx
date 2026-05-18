@@ -3,7 +3,7 @@ import { JetBrains_Mono, Manrope, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -28,9 +28,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("dark", "h-full", "antialiased", manrope.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
+      suppressHydrationWarning
+      className={cn("h-full", "antialiased", manrope.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

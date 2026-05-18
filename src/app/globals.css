@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020711;
-  --foreground: #ebf4ff;
-  --card: #0b1528;
-  --card-foreground: #ebf4ff;
-  --primary: #7dd3fc;
-  --primary-foreground: #02111f;
-  --secondary: #12233c;
-  --secondary-foreground: #d9e8ff;
-  --muted: #0d1a30;
-  --muted-foreground: #9cb1d4;
-  --accent: #6ee7b7;
-  --accent-foreground: #07231a;
-  --border: #243553;
-  --input: #1f3351;
-  --ring: #7dd3fc;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --border: #cbd5e1;
+  --input: #e2e8f0;
+  --ring: #0ea5e9;
   --destructive: #ef4444;
-  --destructive-foreground: #fff1f1;
+  --destructive-foreground: #ffffff;
   --radius: 0.95rem;
   --space-section-sm: 4.5rem;
   --space-section-md: 6.5rem;
@@ -56,10 +56,6 @@ html {
 
 body {
   min-height: 100%;
-  background-image:
-    radial-gradient(circle at 14% 10%, rgba(34, 211, 238, 0.14), transparent 42%),
-    radial-gradient(circle at 88% 14%, rgba(16, 185, 129, 0.1), transparent 35%),
-    radial-gradient(circle at 52% 100%, rgba(59, 130, 246, 0.11), transparent 44%);
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), "Manrope", "Geist", sans-serif;
@@ -82,7 +78,6 @@ body {
 }
 
 .section-reveal-delay-1,
-.section-reveal-delay-2,
 .section-reveal-delay-3 {
   margin-top: var(--space-section-sm);
 }
@@ -103,7 +98,6 @@ body {
 
 @media (min-width: 768px) {
   .section-reveal-delay-1,
-  .section-reveal-delay-2,
   .section-reveal-delay-3 {
     margin-top: var(--space-section-md);
   }

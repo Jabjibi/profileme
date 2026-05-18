@@ -33,11 +33,11 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-[background-color,border-color] duration-500 ease-out",
-        isScrolled ? "bg-slate-950/85 border-slate-800/70" : "bg-slate-950/0 border-slate-800/0"
+        isScrolled ? "bg-background/85 border-border/70" : "bg-background/0 border-border/0"
       )}
     >
       <div className="mx-auto grid h-16 w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
-        <Link href="#home" className="justify-self-start inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-100">
+        <Link href="#home" className="justify-self-start inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-foreground">
           <span className="rounded-lg bg-primary/15 p-1.5 text-primary">
             <Code2 className="size-4" />
           </span>
@@ -56,7 +56,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="justify-self-end">
+        <div className="justify-self-end flex items-center gap-2">
           <Button asChild size="sm" className="gap-2 rounded-full transition-transform hover:scale-105">
             <Link href="#contact">
               <Sparkles className="size-4 animate-pulse" />
