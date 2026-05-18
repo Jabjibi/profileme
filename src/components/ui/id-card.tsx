@@ -55,7 +55,7 @@ export function IdCard() {
               className="text-2xl font-black tracking-tight text-slate-900"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              Tan.dev
+              DoberMan.dev
             </span>
             <span className="mt-1 flex items-center gap-0.5">
               <span className="size-2 rounded-sm bg-sky-400" />
@@ -89,7 +89,7 @@ export function IdCard() {
             <InfoRow label="Name"        value="Tanapon Y."    />
             <InfoRow label="Univ."       value="KU Sriracha"   />
             <InfoRow label="Nationality" value="Thai"          />
-            <InfoRow label="Location"    value="Bangkok"       />
+            <InfoRow label="Location"    value="Samut Prakan"  />
             <InfoRow label="Exp."        value={profile.years} />
           </div>
         </div>
