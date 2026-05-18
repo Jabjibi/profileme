@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, Code2, Download, MapPin } from "lucide-react";
+import { ArrowRight, Download, MapPin } from "lucide-react";
+import { IdCard } from "@/components/ui/id-card";
 
 import BlurText from "@/components/animations/blur-text";
 import FadeContent from "@/components/animations/fade-content";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { profile } from "@/data/portfolio";
 import hero from "@/data/sections/hero.json";
 import { Badge } from "@/components/ui/badge";
@@ -12,12 +14,6 @@ import { Button } from "@/components/ui/button";
 
 const RESUME_FILE_PATH = hero.resumePath;
 
-const colorMap: Record<string, { dot: string; badge: string }> = {
-  cyan:    { dot: "bg-cyan-500",    badge: "border-cyan-500/40 bg-cyan-50 text-cyan-700" },
-  emerald: { dot: "bg-emerald-500", badge: "border-emerald-500/40 bg-emerald-50 text-emerald-700" },
-  blue:    { dot: "bg-sky-500",     badge: "border-sky-500/40 bg-sky-50 text-sky-700" },
-  rose:    { dot: "bg-rose-500",    badge: "border-rose-500/40 bg-rose-50 text-rose-700" },
-};
 
 export function HeroSection() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -58,8 +54,7 @@ export function HeroSection() {
 
   return (
     <section id="home" className="relative w-full pt-16">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white via-cyan-50/60 to-emerald-50/40" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(14,165,233,0.10),transparent_46%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.08),transparent_42%)]" />
+      <AuroraBackground className="pointer-events-none absolute inset-0" showRadialGradient />
 
       <div className="relative flex min-h-[calc(100vh-4rem)] w-full items-center overflow-hidden py-10 lg:py-16">
 
@@ -91,7 +86,7 @@ export function HeroSection() {
                     { filter: "blur(0px)", opacity: 1, y: 0 },
                   ]}
                   className="mt-2 w-full justify-center text-center text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:justify-start lg:text-left"
-                  spanClassName="bg-gradient-to-r from-cyan-300 via-blue-300 to-emerald-300 bg-clip-text text-transparent"
+                  spanClassName="text-sky-500"
                 />
               </div>
 
@@ -129,72 +124,11 @@ export function HeroSection() {
               </FadeContent>
             </div>
 
-            {/* ── Right column: skills card ── */}
+            {/* ── Right column: ID card ── */}
             <FadeContent duration={750} delay={200} translateY={32} scale={0.97} threshold={0}>
               <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-                {/* Glow backdrop */}
-                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-cyan-500/5 blur-2xl" />
-
-                <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-6 backdrop-blur-sm sm:p-7">
-                  {/* Subtle top shimmer */}
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
-
-                  {/* Card header */}
-                  <div className="mb-5 flex items-center gap-2.5">
-                    <span className="inline-flex size-7 items-center justify-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-cyan-300">
-                      <Code2 className="size-3.5" />
-                    </span>
-                    <span className="text-sm font-semibold tracking-wide text-foreground">
-                      {hero.skillCard.heading}
-                    </span>
-                    <span className="ml-auto inline-flex gap-1">
-                      {["bg-rose-400/70", "bg-yellow-400/70", "bg-emerald-400/70"].map((c) => (
-                        <span key={c} className={`size-2.5 rounded-full ${c}`} />
-                      ))}
-                    </span>
-                  </div>
-
-                  {/* Skill groups */}
-                  <div className="grid grid-cols-2 gap-3">
-                    {hero.skillCard.groups.map((group, gi) => {
-                      const colors = colorMap[group.color] ?? colorMap.cyan;
-                      return (
-                        <FadeContent
-                          key={group.label}
-                          duration={500}
-                          delay={300 + gi * 80}
-                          translateY={12}
-                          threshold={0}
-                        >
-                          <div className="rounded-xl border border-border/50 bg-background/40 p-3">
-                            <div className="mb-2.5 flex items-center gap-1.5">
-                              <span className={`size-1.5 rounded-full ${colors.dot}`} />
-                              <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                                {group.label}
-                              </span>
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {group.skills.map((skill) => (
-                                <span
-                                  key={skill}
-                                  className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${colors.badge}`}
-                                >
-                                  {skill}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </FadeContent>
-                      );
-                    })}
-                  </div>
-
-                  {/* Footer: experience */}
-                  <div className="mt-4 flex items-center gap-2 border-t border-border/40 pt-4">
-                    <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
-                    <span className="text-xs text-muted-foreground">{profile.years}</span>
-                  </div>
-                </div>
+                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-sky-400/8 blur-2xl" />
+                <IdCard />
               </div>
             </FadeContent>
 

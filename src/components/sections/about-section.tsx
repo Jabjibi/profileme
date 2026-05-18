@@ -20,7 +20,7 @@ export function AboutSection() {
       <div className="grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-3">
           <FadeContent duration={700} delay={0} translateY={30} className="col-span-1 lg:col-span-3">
             <WobbleCard
-              containerClassName="min-h-[260px] bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-600 lg:col-span-3 lg:min-h-[320px]"
+              containerClassName="md:min-h-[260px] bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-600 lg:col-span-3 lg:min-h-[320px]"
               className="px-5 py-7 sm:px-7 sm:py-9 lg:pr-64"
             >
               <div className="max-w-sm">
@@ -55,10 +55,10 @@ export function AboutSection() {
 
           <FadeContent duration={700} delay={120} translateY={30} className="col-span-1 lg:col-span-2">
             <WobbleCard
-              containerClassName="min-h-[240px] bg-gradient-to-br from-cyan-400 via-sky-500 to-blue-600 lg:min-h-[280px]"
+              containerClassName="md:min-h-[240px] bg-gradient-to-br from-cyan-400 via-sky-500 to-blue-600 lg:min-h-[280px]"
               className="px-5 py-7 sm:px-7 sm:py-9 lg:pr-52"
             >
-              <div className="max-w-xs">
+              <div className="w-full lg:max-w-xs">
                 <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                   {card1.heading}
                 </h2>
@@ -79,7 +79,7 @@ export function AboutSection() {
 
           <FadeContent duration={700} delay={200} translateY={30}>
             <WobbleCard
-              containerClassName="min-h-[240px] bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 lg:min-h-[280px]"
+              containerClassName="md:min-h-[240px] bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 lg:min-h-[280px]"
               className="px-5 py-7 sm:px-7 sm:py-9"
             >
               <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">

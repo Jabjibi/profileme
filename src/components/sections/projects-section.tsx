@@ -13,20 +13,17 @@ import BlurText from "@/components/animations/blur-text";
 
 const categories = content.categories as { label: string; value: "all" | ProjectCategory }[];
 
-const categoryStyles: Record<ProjectCategory, { glow: string; accent: string; badge: string }> = {
+const categoryStyles: Record<ProjectCategory, { accent: string; badge: string }> = {
   fullstack: {
-    glow: "hover:shadow-[0_0_28px_rgba(14,165,233,0.18)]",
-    accent: "group-hover:text-cyan-600",
+    accent: "",
     badge: "border-cyan-500/40 bg-cyan-50 text-cyan-700",
   },
   automation: {
-    glow: "hover:shadow-[0_0_28px_rgba(16,185,129,0.18)]",
-    accent: "group-hover:text-emerald-600",
+    accent: "",
     badge: "border-emerald-500/40 bg-emerald-50 text-emerald-700",
   },
   security: {
-    glow: "hover:shadow-[0_0_28px_rgba(244,63,94,0.18)]",
-    accent: "group-hover:text-rose-600",
+    accent: "",
     badge: "border-rose-500/40 bg-rose-50 text-rose-700",
   },
 };
@@ -112,16 +109,15 @@ export function ProjectsSection() {
                   scale={0.97}
                 >
                   <Card
-                    className={`group relative flex h-full flex-col overflow-hidden border-border/80 bg-card/55 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-border hover:bg-muted/70 ${style.glow}`}
+                    className="group relative flex h-full flex-col overflow-hidden border-border/80 bg-card/55 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-border hover:bg-muted/70"
                   >
-                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-slate-100/35 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-80" />
 
                     <CardHeader className="space-y-3 pb-4">
                       <div className="flex items-start justify-between gap-4">
-                        <CardTitle className={`text-xl font-bold tracking-tight text-foreground transition-colors ${style.accent}`}>
+                        <CardTitle className="text-xl font-bold tracking-tight text-foreground">
                           {project.title}
                         </CardTitle>
-                        <ArrowUpRight className={`size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 ${style.accent}`} />
+                        <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                       </div>
                       <CardDescription className="text-sm font-light leading-relaxed text-muted-foreground">
                         {project.description}
