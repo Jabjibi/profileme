@@ -4,18 +4,18 @@
   "slides": [
     {
       "title": "Credential Deduplication System",
-      "summary": "Developed Full-stack Automation system using PostgreSQL upsert mechanism, reducing redundant record creation.",
-      "metric": "Increased data management efficiency"
+      "summary": "Built a full-stack automation pipeline with n8n and PostgreSQL upsert logic to process CloudSEK credential reports and eliminate redundant records at scale.",
+      "metric": "30+ min → under 1 min processing time"
     },
     {
       "title": "SOC Alert Monitoring Dashboard",
-      "summary": "Aggregated security alerts from CrowdStrike API to a central dashboard with custom Node.js logic.",
-      "metric": "Improved operational visibility"
+      "summary": "Integrated CrowdStrike APIs into a centralized n8n dashboard to aggregate and enrich security alert metadata, streamlining incident triage for the SOC team.",
+      "metric": "Centralized multi-source alert monitoring"
     },
     {
       "title": "Automated Task Notification System",
-      "summary": "Built an automated daily task tracking system to fetch pending tasks via REST API and send Slack alerts.",
-      "metric": "Achieved zero missed deadlines"
+      "summary": "Engineered a Slack workflow that polls REST APIs every 2 hours and auto-tags assignees for overdue tasks, eliminating missed deadlines across the SOC team.",
+      "metric": "Zero missed deadlines"
     }
   ]
 }

@@ -8,6 +8,7 @@ export type ProjectItem = {
   stack: string[];
   category: ProjectCategory;
   link: string;
+  confidential?: boolean;
 };
 
 export const profile = raw.profile;

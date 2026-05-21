@@ -143,7 +143,12 @@ export function ProjectsSection() {
                         ))}
                       </div>
 
-                      {liveProject ? (
+                      {project.confidential ? (
+                        <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                          <span className="size-1.5 rounded-full bg-amber-400/80" />
+                          Internship · Confidential
+                        </p>
+                      ) : liveProject ? (
                         <a
                           href={project.link}
                           target="_blank"

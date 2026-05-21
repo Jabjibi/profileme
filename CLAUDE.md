@@ -78,3 +78,28 @@ npm run lint   # ESLint
 | About | `#about` | `AboutSection` |
 | Projects | `#projects` | `ProjectsSection` |
 | Contact | `#contact` | `ContactSection` |
+
+## Pre-Edit Checklist (ทำก่อนแก้ code ทุกครั้ง)
+
+1. **อ่าน CLAUDE.md + AGENTS.md** — เข้าใจ conventions และ breaking changes ของ Next.js 16
+2. **อ่านไฟล์จริงที่จะแก้** — ไม่เดาจาก structure, อ่าน source ก่อนเสมอ
+3. **ระบุ scope ให้แคบ** — แก้เฉพาะที่ถูกขอ ไม่ refactor สิ่งที่ไม่เกี่ยวข้อง
+
+## `.agents` Skills
+
+Skills อยู่ที่ `.agents/skills/` — ใช้ตามตารางนี้:
+
+| Skill | ใช้เมื่อ |
+|---|---|
+| `next-best-practices` | ก่อนเขียน/แก้ component ใดๆ — ตรวจ RSC boundary, async patterns, directive (`"use client"`), hydration errors, image/font optimization |
+| `vercel-composition-patterns` | เมื่อ refactor หรือออกแบบ component — หลีกเลี่ยง boolean props, ใช้ compound components, React 19 no `forwardRef` |
+| `deploy-to-vercel` | เมื่อ deploy — ตรวจ git remote + Vercel link ก่อน แล้วเลือก method ที่เหมาะสม |
+
+### ลำดับการทำงาน
+
+1. อ่าน CLAUDE.md → เข้าใจ conventions
+2. อ่านไฟล์จริง → เข้าใจ current state
+3. ใช้ `next-best-practices` → ตรวจสอบ patterns ที่ถูกต้องสำหรับ Next.js 16
+4. ใช้ `vercel-composition-patterns` → ตรวจสอบ component design
+5. แก้ code → เฉพาะ scope ที่ถูกขอ
+6. ใช้ `deploy-to-vercel` → เมื่อ deploy
