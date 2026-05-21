@@ -18,6 +18,10 @@ const categoryStyles: Record<ProjectCategory, { accent: string; badge: string }>
     accent: "",
     badge: "border-cyan-500/40 bg-cyan-50 text-cyan-700",
   },
+  frontend: {
+    accent: "",
+    badge: "border-violet-500/40 bg-violet-50 text-violet-700",
+  },
   automation: {
     accent: "",
     badge: "border-emerald-500/40 bg-emerald-50 text-emerald-700",

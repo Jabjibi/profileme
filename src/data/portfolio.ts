@@ -1,6 +1,6 @@
 import raw from "./portfolio.json";
 
-export type ProjectCategory = "fullstack" | "automation" | "security";
+export type ProjectCategory = "fullstack" | "frontend" | "automation" | "security";
 
 export type ProjectItem = {
   title: string;

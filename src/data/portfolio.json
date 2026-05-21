@@ -29,6 +29,16 @@
       "link": ""
     },
     {
+      "title": "Computer Science Testing & Evaluation Hub",
+      "description": [
+        "Built a scalable online coding exam platform featuring real-time automated evaluation.",
+        "Integrated Judge0 and Monaco Editor to support 5+ programming languages.",
+        "Engineered live leaderboards and concurrent execution using Docker, PostgreSQL, and Redis."      ],
+      "stack": ["Next.js", "TypeScript", "Judge0 API", "Monaco Editor", "Docker", "PostgreSQL", "Redis"],
+      "category": "frontend",
+      "link": ""
+    },
+    {
       "title": "Credential Deduplication Automation",
       "description": [
         "Reduced CloudSEK report processing time from 30+ minutes to under 1 minute.",
