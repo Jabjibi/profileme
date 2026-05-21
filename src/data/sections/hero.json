@@ -4,7 +4,7 @@
     "primary": "View Work",
     "resume": "Resume"
   },
-  "resumePath": "/Tanapon-Resume-SoftwareDev.pdf",
+  "resumePath": "/Tanapon-Resume-SoftwareEngineer.pdf",
   "skillCard": {
     "heading": "Tech Stack",
     "groups": [
@@ -40,7 +40,7 @@
     "notFound": {
       "heading": "Resume file not found",
       "description": "Please add your PDF file at",
-      "path": "public/Tanapon-Resume-SoftwareDev.pdf"
+      "path": "public/Tanapon-Resume-SoftwareEngineer.pdf"
     }
   }
 }
