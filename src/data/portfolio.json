@@ -20,14 +20,19 @@
   "projects": [
     {
       "title": "Computer Science Testing & Evaluation Hub",
-      "description": "Developed and deployed a scalable online coding examination platform replacing paper-based exams with automated real-time evaluation. Integrated Judge0 API and Monaco Editor to support in-browser assessments across 5+ languages, with live leaderboards and concurrent execution via Docker, PostgreSQL, and Redis.",
+      "description": [
+        "Built a scalable online coding exam platform featuring real-time automated evaluation.",
+        "Integrated Judge0 and Monaco Editor to support 5+ programming languages.",
+        "Engineered live leaderboards and concurrent execution using Docker, PostgreSQL, and Redis."      ],
       "stack": ["Next.js", "TypeScript", "Judge0 API", "Monaco Editor", "Docker", "PostgreSQL", "Redis"],
       "category": "fullstack",
       "link": ""
     },
     {
       "title": "Credential Deduplication Automation",
-      "description": "Reduced CloudSEK credential report processing time from 30+ minutes to under 1 minute by building a full-stack automation pipeline. Eliminated manual deduplication across thousands of records using PostgreSQL upsert logic and an n8n workflow engine.",
+      "description": [
+        "Reduced CloudSEK report processing time from 30+ minutes to under 1 minute.",
+        "Developed a full-stack automation pipeline via n8n and PostgreSQL upsert logic, eliminating manual duplication across thousands of records."      ],
       "stack": ["Next.js", "JavaScript", "n8n", "PostgreSQL"],
       "category": "automation",
       "link": "",
@@ -35,7 +40,10 @@
     },
     {
       "title": "SOC Alert Monitoring Dashboard",
-      "description": "Integrated CrowdStrike APIs into a centralized n8n dashboard to aggregate, filter, and enrich security alert metadata — streamlining incident triage and reducing manual lookup time across distributed SOC workflows.",
+      "description": [
+        "Centralized security alerts into an n8n dashboard using CrowdStrike APIs.",
+        "Streamlined incident triage and significantly reduced manual lookup time across SOC workflows."
+      ],
       "stack": ["Next.js", "JavaScript", "n8n", "CrowdStrike API"],
       "category": "security",
       "link": "",
@@ -43,7 +51,9 @@
     },
     {
       "title": "Automated Task Notification System",
-      "description": "Engineered a Slack notification workflow that polls REST APIs every 2 hours and auto-tags assignees for overdue tasks, achieving zero missed deadlines across the SOC team.",
+      "description": [
+        "Engineered an n8n and Slack workflow polling REST APIs every 2 hours to auto-tag assignees for overdue tasks.",
+        "Boosted team accountability and eliminated missed deadlines."      ],
       "stack": ["n8n", "JavaScript", "Excel Sheets API", "Slack API"],
       "category": "automation",
       "link": "",
@@ -51,7 +61,10 @@
     },
     {
       "title": "Web Vulnerability Pentesting",
-      "description": "Identified 20 security vulnerabilities across client API endpoints via grey-box penetration testing — including Broken Access Control, XSS, and Parameter Tampering. Delivered severity-graded remediation reports with mitigation guidance for each finding.",
+      "description": [
+        "Identified 20+ vulnerabilities (Broken Access Control, XSS, Parameter Tampering) via grey-box penetration testing.",
+        "Delivered severity-graded remediation reports with clear mitigation guidance."
+      ],
       "stack": ["Burp Suite", "Turbo Intruder", "OWASP Top 10"],
       "category": "security",
       "link": "",

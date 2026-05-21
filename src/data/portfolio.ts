@@ -4,7 +4,7 @@ export type ProjectCategory = "fullstack" | "automation" | "security";
 
 export type ProjectItem = {
   title: string;
-  description: string;
+  description: string[];
   stack: string[];
   category: ProjectCategory;
   link: string;
@@ -13,4 +13,4 @@ export type ProjectItem = {
 
 export const profile = raw.profile;
 export const skills: string[] = raw.skills;
-export const projects: ProjectItem[] = raw.projects as ProjectItem[];
+export const projects: ProjectItem[] = raw.projects as unknown as ProjectItem[];

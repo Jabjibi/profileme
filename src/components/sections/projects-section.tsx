@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { projects, type ProjectCategory, type ProjectItem } from "@/data/portfolio";
 import content from "@/data/sections/projects.json";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FadeContent from "@/components/animations/fade-content";
 import BlurText from "@/components/animations/blur-text";
@@ -119,9 +119,9 @@ export function ProjectsSection() {
                         </CardTitle>
                         <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                       </div>
-                      <CardDescription className="text-sm font-light leading-relaxed text-muted-foreground">
-                        {project.description}
-                      </CardDescription>
+                      <p className="text-sm font-light leading-relaxed text-muted-foreground">
+                        {project.description.join(" ")}
+                      </p>
                     </CardHeader>
 
                     <CardContent className="mt-auto space-y-6">
