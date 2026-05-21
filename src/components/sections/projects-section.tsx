@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-import { projects, type ProjectCategory, type ProjectItem } from "@/data/portfolio";
+import { type ProjectCategory, type ProjectItem } from "@/data/portfolio";
 import content from "@/data/sections/projects.json";
+import { useProjectFilter } from "@/lib/hooks/useProjectFilter";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -39,14 +39,7 @@ function isLiveProject(project: ProjectItem) {
 }
 
 export function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
-
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") {
-      return projects;
-    }
-    return projects.filter((project) => project.category === activeCategory);
-  }, [activeCategory]);
+  const { activeCategory, setActiveCategory, filteredProjects } = useProjectFilter();
 
   return (
     <section
