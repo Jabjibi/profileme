@@ -29,12 +29,10 @@
       "link": ""
     },
     {
-      "title": "Computer Science Testing & Evaluation Hub",
+      "title": "Photobooth Frontend Interface",
       "description": [
-        "Built a scalable online coding exam platform featuring real-time automated evaluation.",
-        "Integrated Judge0 and Monaco Editor to support 5+ programming languages.",
-        "Engineered live leaderboards and concurrent execution using Docker, PostgreSQL, and Redis."      ],
-      "stack": ["Next.js", "TypeScript", "Judge0 API", "Monaco Editor", "Docker", "PostgreSQL", "Redis"],
+        "lorem ipsum dolor sit amet" ],
+      "stack": ["Next.js", "TypeScript"],
       "category": "frontend",
       "link": ""
     },

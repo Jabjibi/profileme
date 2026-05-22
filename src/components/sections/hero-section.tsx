@@ -9,7 +9,6 @@ import FadeContent from "@/components/animations/fade-content";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { profile } from "@/data/portfolio";
 import hero from "@/data/sections/hero.json";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const RESUME_FILE_PATH = hero.resumePath;

@@ -74,7 +74,6 @@ export function IdCard() {
 
         {/* ── Body ── */}
         <div className="flex min-h-[200px]">
-          {/* Photo zone */}
           <div className="flex w-[44%] shrink-0 items-end justify-center self-stretch bg-sky-400">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
