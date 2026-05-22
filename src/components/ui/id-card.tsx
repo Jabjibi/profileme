@@ -30,7 +30,7 @@ export function IdCard() {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={name}
-          src={`https://skillicons.dev/icons?i=${name}`}
+          src={`/icons/${name}.svg`}
           alt={name}
           width={32}
           height={32}

@@ -32,6 +32,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("h-full", "antialiased", manrope.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
     >
+      <head>
+        <link rel="preconnect" href="https://api.dicebear.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
