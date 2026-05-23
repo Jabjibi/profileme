@@ -7,7 +7,6 @@ import content from "@/data/sections/projects.json";
 import { useProjectFilter } from "@/lib/hooks/useProjectFilter";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FadeContent from "@/components/animations/fade-content";
 import BlurText from "@/components/animations/blur-text";
 
@@ -75,21 +74,25 @@ export function ProjectsSection() {
           </FadeContent>
         </div>
 
-        <Tabs value={activeCategory} onValueChange={(value) => setActiveCategory(value as CategoryFilter)} className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
           <FadeContent duration={600} delay={220} translateY={16}>
-            <TabsList
+            <div
+              role="tablist"
+              aria-label="Project categories"
               className="inline-flex h-auto max-w-fit self-start justify-start overflow-x-auto rounded-full border border-border/70 bg-muted/45 p-1"
             >
               {categories.map((category) => (
-                <TabsTrigger
+                <button
                   key={category.value}
-                  value={category.value}
-                  className="rounded-full px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-all hover:text-foreground data-[state=active]:bg-muted data-[state=active]:text-foreground data-[state=active]:shadow-lg"
+                  role="tab"
+                  aria-selected={activeCategory === category.value}
+                  onClick={() => setActiveCategory(category.value as CategoryFilter)}
+                  className="rounded-full px-5 py-2.5 text-sm font-semibold text-muted-foreground transition-all hover:text-foreground aria-selected:bg-muted aria-selected:text-foreground aria-selected:shadow-lg"
                 >
                   {category.label}
-                </TabsTrigger>
+                </button>
               ))}
-            </TabsList>
+            </div>
           </FadeContent>
 
           <div className="grid gap-6 pt-2 sm:grid-cols-2">
@@ -164,7 +167,7 @@ export function ProjectsSection() {
               );
             })}
           </div>
-        </Tabs>
+        </div>
       </div>
     </section>
   );
