@@ -1,41 +1,15 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-
-import { type ProjectCategory, type ProjectItem } from "@/data/portfolio";
+import { type ProjectCategory } from "@/data/portfolio";
 import content from "@/data/sections/projects.json";
 import { useProjectFilter } from "@/lib/hooks/useProjectFilter";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FadeContent from "@/components/animations/fade-content";
 import BlurText from "@/components/animations/blur-text";
+import { ProjectCard } from "@/components/sections/project-card";
 
 const categories = content.categories as { label: string; value: "all" | ProjectCategory }[];
 
-const categoryStyles: Record<ProjectCategory, { accent: string; badge: string }> = {
-  fullstack: {
-    accent: "",
-    badge: "border-cyan-500/40 bg-cyan-50 text-cyan-700",
-  },
-  frontend: {
-    accent: "",
-    badge: "border-violet-500/40 bg-violet-50 text-violet-700",
-  },
-  automation: {
-    accent: "",
-    badge: "border-emerald-500/40 bg-emerald-50 text-emerald-700",
-  },
-  security: {
-    accent: "",
-    badge: "border-rose-500/40 bg-rose-50 text-rose-700",
-  },
-};
-
 type CategoryFilter = (typeof categories)[number]["value"];
-
-function isLiveProject(project: ProjectItem) {
-  return Boolean(project.link && project.link !== "#");
-}
 
 export function ProjectsSection() {
   const { activeCategory, setActiveCategory, filteredProjects } = useProjectFilter();
@@ -46,7 +20,6 @@ export function ProjectsSection() {
       className="section-reveal mx-auto w-full max-w-6xl scroll-mt-24 px-6 md:px-8"
     >
       <div className="space-y-10">
-        {/* Section header */}
         <div className="space-y-4">
           <FadeContent duration={600} delay={0} translateY={20}>
             <div className="flex items-center space-x-3">
@@ -96,76 +69,17 @@ export function ProjectsSection() {
           </FadeContent>
 
           <div className="grid gap-6 pt-2 sm:grid-cols-2">
-            {filteredProjects.map((project, index) => {
-              const style = categoryStyles[project.category];
-              const liveProject = isLiveProject(project);
-
-              return (
-                <FadeContent
-                  key={`${activeCategory}-${project.title}`}
-                  duration={600}
-                  delay={index * 90}
-                  translateY={24}
-                  scale={0.97}
-                >
-                  <Card
-                    className="group relative flex h-full flex-col overflow-hidden border-border/80 bg-card/55 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-border hover:bg-muted/70"
-                  >
-
-                    <CardHeader className="space-y-3 pb-4">
-                      <div className="flex items-start justify-between gap-4">
-                        <CardTitle className="text-xl font-bold tracking-tight text-foreground">
-                          {project.title}
-                        </CardTitle>
-                        <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
-                      </div>
-                      <p className="text-sm font-light leading-relaxed text-muted-foreground">
-                        {project.description.join(" ")}
-                      </p>
-                    </CardHeader>
-
-                    <CardContent className="mt-auto space-y-6">
-                      <div className="flex items-center justify-between gap-3">
-                        <Badge variant="outline" className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] ${style.badge}`}>
-                          {project.category}
-                        </Badge>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        {project.stack.map((item) => (
-                          <Badge
-                            key={item}
-                            variant="secondary"
-                            className="border-0 bg-muted/70 text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
-                          >
-                            {item}
-                          </Badge>
-                        ))}
-                      </div>
-
-                      {project.confidential ? (
-                        <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
-                          <span className="size-1.5 rounded-full bg-amber-400/80" />
-                          Internship · Confidential
-                        </p>
-                      ) : liveProject ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-cyan-600 transition-colors hover:text-cyan-700"
-                        >
-                          {content.caseStudyLink}
-                          <ArrowUpRight className="size-4" />
-                        </a>
-                      ) : (
-                        <p className="text-sm text-muted-foreground">{content.caseStudyUnavailable}</p>
-                      )}
-                    </CardContent>
-                  </Card>
-                </FadeContent>
-              );
-            })}
+            {filteredProjects.map((project, index) => (
+              <FadeContent
+                key={`${activeCategory}-${project.title}`}
+                duration={600}
+                delay={index * 90}
+                translateY={24}
+                scale={0.97}
+              >
+                <ProjectCard project={project} />
+              </FadeContent>
+            ))}
           </div>
         </div>
       </div>

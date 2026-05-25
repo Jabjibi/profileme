@@ -31,10 +31,29 @@
     {
       "title": "Photobooth Frontend Interface",
       "description": [
-        "lorem ipsum dolor sit amet" ],
-      "stack": ["Next.js", "TypeScript"],
+        "Photobooth Dober An interactive web photobooth application. Key features include live photo capturing, customizable frames,",
+        "custom filters/stickers, and a realistic printing animation." ],
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS"],
       "category": "frontend",
-      "link": ""
+      "link": "",
+      "slug": "photobooth",
+      "details": {
+        "overview": "Sparkle Booth is an interactive web photobooth experience built entirely in the browser. Inspired by the retro charm of real-world photo booths, it lets users capture live photos, pick from multiple layout formats, customize frames, and watch a satisfying print animation before saving their strip.",
+        "features": [
+          "Live camera capture via WebRTC browser API",
+          "Multiple layout formats — 4-shot strip, triptych, stack, credential",
+          "Customizable frame styles and overlays",
+          "Custom sticker and decoration placement",
+          "Realistic print-out animation sequence",
+          "One-click photo download"
+        ],
+        "images": [
+          "/apple-iphone-15-pink-mockup/screen-home-portrait.png",
+          "/apple-iphone-15-pink-mockup/screen-layout-portrait.png"
+        ],
+        "githubUrl": "https://github.com/Jabjibi/photoboothdober",
+        "liveUrl": "https://snapd-nu.vercel.app"
+      }
     },
     {
       "title": "Credential Deduplication Automation",
