@@ -70,8 +70,8 @@
     {
       "title": "Car Service Tracker",
       "description": [
-        "Built a full-stack car maintenance platform with LINE OAuth login, enabling users to manage multi-vehicle service histories and receive proactive LINE Flex Message reminders before scheduled maintenance.",
-        "Designed financial dashboards with monthly bar charts and exported service history as PDF/CSV — reducing missed maintenance cycles and improving vehicle ownership visibility."
+        "Full-stack vehicle maintenance tracker with LINE OAuth login, multi-car management, and automated LINE Flex Message reminders before service intervals.",
+        "Built with Next.js, .NET, and Supabase — featuring expense dashboards and PDF/CSV export."
       ],
       "stack": ["Next.js", "TypeScript", ".NET", "Supabase", "AWS Lambda", "LINE API"],
       "category": "fullstack",

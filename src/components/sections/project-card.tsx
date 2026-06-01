@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
             <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
           )}
         </div>
-        <p className="text-sm font-light leading-relaxed text-muted-foreground">
+        <p className="text-sm font-light leading-relaxed text-muted-foreground text-justify">
           {project.description.join(" ")}
         </p>
       </CardHeader>
