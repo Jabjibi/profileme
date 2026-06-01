@@ -97,24 +97,34 @@ export default async function ProjectPage({ params }: Props) {
           </p>
         </section>
 
-        {/* iPhone mockups */}
+        {/* Device mockups */}
         {details.images.length > 0 && (
-          <section className="flex items-end justify-center gap-6 py-4 sm:gap-10">
-            {details.images.map((src, i) => (
-              <div
-                key={src}
-                className={`relative w-48 shrink-0 drop-shadow-2xl sm:w-64 ${i % 2 === 0 ? "-translate-y-6" : "translate-y-6"}`}
-              >
-                <Image
-                  src={src}
-                  alt={`${project.title} screenshot ${i + 1}`}
-                  width={390}
-                  height={780}
-                  className="w-full"
-                  priority={i === 0}
-                />
-              </div>
-            ))}
+          <section className="flex items-center justify-center gap-8 py-4 sm:gap-14">
+            {details.images.map((src, i) => {
+              const layout = details.mockupLayout ?? "phone-pair";
+              const isDesktopSlot = layout === "desktop-phone" && i === 0;
+              return (
+                <div
+                  key={src}
+                  className={`relative shrink-0 drop-shadow-2xl ${
+                    isDesktopSlot
+                      ? "w-72 sm:w-[460px] -translate-y-4"
+                      : layout === "desktop-phone"
+                      ? "w-28 sm:w-40 translate-y-4"
+                      : `w-44 sm:w-56 ${i % 2 === 0 ? "-translate-y-4" : "translate-y-4"}`
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.title} screenshot ${i + 1}`}
+                    width={isDesktopSlot ? 1280 : 390}
+                    height={isDesktopSlot ? 800 : 780}
+                    className="w-full"
+                    priority={i === 0}
+                  />
+                </div>
+              );
+            })}
           </section>
         )}
 
@@ -127,7 +137,7 @@ export default async function ProjectPage({ params }: Props) {
             {/* Overview */}
             <div>
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">Overview</p>
-              <p className="text-base leading-8 text-slate-600 sm:text-lg">{details.overview}</p>
+              <p className="text-base leading-8 text-slate-600 sm:text-lg text-justify">{details.overview}</p>
             </div>
 
             {/* Features */}
@@ -136,7 +146,7 @@ export default async function ProjectPage({ params }: Props) {
               <ul className="space-y-3">
                 {details.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-slate-600 sm:text-base">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-violet-400" />
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-slate-400" />
                     {f}
                   </li>
                 ))}

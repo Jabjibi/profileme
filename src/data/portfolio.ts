@@ -6,6 +6,7 @@ export type ProjectDetails = {
   overview: string;
   features: string[];
   images: string[];
+  mockupLayout?: "phone-pair" | "desktop-phone";
   githubUrl?: string;
   liveUrl?: string;
 };

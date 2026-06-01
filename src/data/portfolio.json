@@ -51,6 +51,7 @@
           "/apple-iphone-15-pink-mockup/screen-home-portrait.png",
           "/apple-iphone-15-pink-mockup/screen-layout-portrait.png"
         ],
+        "mockupLayout": "phone-pair",
         "githubUrl": "https://github.com/Jabjibi/photoboothdober",
         "liveUrl": "https://snapd-nu.vercel.app"
       }
@@ -59,11 +60,40 @@
       "title": "Credential Deduplication Automation",
       "description": [
         "Reduced CloudSEK report processing time from 30+ minutes to under 1 minute.",
-        "Developed a full-stack automation pipeline via n8n and PostgreSQL upsert logic, eliminating manual duplication across thousands of records."      ],
+        "Developed a full-stack automation pipeline via n8n and PostgreSQL upsert logic, eliminating manual duplication across thousands of records."
+      ],
       "stack": ["Next.js", "JavaScript", "n8n", "PostgreSQL"],
       "category": "automation",
       "link": "",
       "confidential": true
+    },
+    {
+      "title": "Car Service Tracker",
+      "description": [
+        "Built a full-stack car maintenance platform with LINE OAuth login, enabling users to manage multi-vehicle service histories and receive proactive LINE Flex Message reminders before scheduled maintenance.",
+        "Designed financial dashboards with monthly bar charts and exported service history as PDF/CSV — reducing missed maintenance cycles and improving vehicle ownership visibility."
+      ],
+      "stack": ["Next.js", "TypeScript", ".NET", "Supabase", "AWS Lambda", "LINE API"],
+      "category": "fullstack",
+      "link": "",
+      "slug": "car-service-tracker",
+      "details": {
+        "overview": "A full-stack vehicle maintenance tracking platform built to solve the common problem of forgetting service schedules and losing paper receipts. Users log in instantly via LINE OAuth, register multiple vehicles with full details and photos, and log every service record — oil changes, tyres, brakes — with cost, mileage, garage name, and receipt photo. The platform calculates the next maintenance interval and fires a LINE Flex Message reminder 7 days ahead, keeping vehicles in peak condition without any manual tracking.",
+        "features": [
+          "LINE OAuth 2.0 login — frictionless access without passwords or new account registration",
+          "Multi-vehicle garage management with brand, model, year, plate, mileage, and photo",
+          "Comprehensive service logs with receipt photo storage, cost tracking, and garage details",
+          "Monthly expense dashboard (bar chart) with urgent-care vehicle highlights on the home screen",
+          "Proactive LINE Flex Message notifications 7 days before the next scheduled service interval",
+          "Timeline and calendar view with Google Calendar export (.ics) for appointment planning",
+          "Full service history export as formatted PDF (QuestPDF) or CSV"
+        ],
+        "images": [
+          "/apple-iphone-15-plus-green-mockup/dashboard-front.png",
+          "/apple-iphone-15-plus-green-mockup/dashboard-portrait.png"
+        ],
+        "mockupLayout": "desktop-phone"
+      }
     },
     {
       "title": "SOC Alert Monitoring Dashboard",

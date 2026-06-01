@@ -50,10 +50,6 @@
   --font-mono: var(--font-jetbrains-mono);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   min-height: 100%;
   background-color: var(--background);
