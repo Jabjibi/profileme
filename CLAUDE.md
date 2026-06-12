@@ -55,7 +55,8 @@ src/
 All portfolio content lives in **`src/data/portfolio.ts`** — edit `profile`, `skills`, or `projects` there, never hardcode content in components.
 
 - `ProjectCategory` = `"fullstack" | "automation" | "security"`
-- Resume PDF expected at `public/Tanapon-Resume-SoftwareDev.pdf`
+- Resume PDF path configured in `src/data/sections/hero.json` → `resumePath`
+- Resume file: `public/Tanapon-Resume-SoftwareEngineer.pdf`
 
 ## Key Conventions
 - **`"use client"`** required on any component using hooks, event handlers, or browser APIs
