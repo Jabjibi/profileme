@@ -47,9 +47,8 @@
           "Create, edit, delete, and search posts with Cloud Firestore",
           "Chat for communication between users"
         ],
-        "images": ["/flutter.png"],
-        "mockupLayout": "wide",
-        "youtubeVideoId": "LnP73yaP9fM"
+        "images": ["/project-flutter/flutter.png"],
+        "mockupLayout": "wide"
       }
     },
     {
