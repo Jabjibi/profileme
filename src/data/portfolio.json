@@ -48,7 +48,8 @@
           "Chat for communication between users"
         ],
         "images": ["/project-flutter/flutter.png"],
-        "mockupLayout": "wide"
+        "mockupLayout": "wide",
+        "youtubeVideoId": "LnP73yaP9fM"
       }
     },
     {
