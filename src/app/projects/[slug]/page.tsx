@@ -88,7 +88,13 @@ export default async function ProjectPage({ params }: Props) {
             {project.category}
           </Badge>
 
-          <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1
+            className={`mx-auto text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl ${
+              project.slug === "messaging-community-app"
+                ? "max-w-none lg:text-5xl xl:whitespace-nowrap 2xl:text-6xl"
+                : "max-w-3xl lg:text-6xl"
+            }`}
+          >
             {project.title}
           </h1>
 
@@ -103,11 +109,14 @@ export default async function ProjectPage({ params }: Props) {
             {details.images.map((src, i) => {
               const layout = details.mockupLayout ?? "phone-pair";
               const isDesktopSlot = layout === "desktop-phone" && i === 0;
+              const isWide = layout === "wide";
               return (
                 <div
                   key={src}
                   className={`relative shrink-0 drop-shadow-2xl ${
-                    isDesktopSlot
+                    isWide
+                      ? "w-full"
+                      : isDesktopSlot
                       ? "w-72 sm:w-[460px] -translate-y-4"
                       : layout === "desktop-phone"
                       ? "w-28 sm:w-40 translate-y-4"
@@ -117,14 +126,37 @@ export default async function ProjectPage({ params }: Props) {
                   <Image
                     src={src}
                     alt={`${project.title} screenshot ${i + 1}`}
-                    width={isDesktopSlot ? 1280 : 390}
-                    height={isDesktopSlot ? 800 : 780}
-                    className="w-full"
+                    width={isWide ? 2136 : isDesktopSlot ? 1280 : 390}
+                    height={isWide ? 654 : isDesktopSlot ? 800 : 780}
+                    sizes={isWide ? "(max-width: 1024px) 100vw, 1024px" : undefined}
+                    className="h-auto w-full"
                     priority={i === 0}
                   />
                 </div>
               );
             })}
+          </section>
+        )}
+
+        {details.youtubeVideoId && (
+          <section className="flex flex-col items-center gap-5 pt-12">
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">App Demo</h2>
+            <iframe
+              src={`https://www.youtube.com/embed/${details.youtubeVideoId}`}
+              title={`${project.title} app demo`}
+              className="aspect-[9/16] w-full max-w-sm rounded-2xl border border-slate-200 shadow-xl"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+            <a
+              href={`https://www.youtube.com/shorts/${details.youtubeVideoId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-slate-900"
+            >
+              Watch on YouTube <ArrowUpRight className="size-4" />
+            </a>
           </section>
         )}
 

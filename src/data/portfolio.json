@@ -29,6 +29,30 @@
       "link": ""
     },
     {
+      "title": "Messaging and Community App",
+      "description": [
+        "Developed a mobile application using Flutter and Firebase.",
+        "Implemented authentication using Firebase Authentication.",
+        "Used Cloud Firestore to create, edit, delete, and search posts.",
+        "Added a chat feature for communication between users."
+      ],
+      "stack": ["Flutter", "Firebase Authentication", "Cloud Firestore"],
+      "category": "fullstack",
+      "link": "",
+      "slug": "messaging-community-app",
+      "details": {
+        "overview": "Developed a mobile messaging and community application using Flutter and Firebase.",
+        "features": [
+          "User authentication with Firebase Authentication",
+          "Create, edit, delete, and search posts with Cloud Firestore",
+          "Chat for communication between users"
+        ],
+        "images": ["/flutter.png"],
+        "mockupLayout": "wide",
+        "youtubeVideoId": "LnP73yaP9fM"
+      }
+    },
+    {
       "title": "Photobooth Frontend Interface",
       "description": [
         "Photobooth Dober An interactive web photobooth application. Key features include live photo capturing, customizable frames,",

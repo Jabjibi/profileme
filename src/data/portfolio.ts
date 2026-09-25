@@ -6,7 +6,8 @@ export type ProjectDetails = {
   overview: string;
   features: string[];
   images: string[];
-  mockupLayout?: "phone-pair" | "desktop-phone";
+  mockupLayout?: "phone-pair" | "desktop-phone" | "wide";
+  youtubeVideoId?: string;
   githubUrl?: string;
   liveUrl?: string;
 };
